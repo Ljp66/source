@@ -10,8 +10,5 @@
 1. python
 2. git
 3. office
-4. SQL
-5. markdown
-6. latex
-7. linux
-8. golang
+4. markdown
+5. linux
