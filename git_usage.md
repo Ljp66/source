@@ -16,6 +16,8 @@
     - [2.11 移动文件](#211-移动文件)
   - [3. 查看提交历史](#3-查看提交历史)
   - [4. 撤销操作](#4-撤销操作)
+    - [4.1 修改提交信息](#41-修改提交信息)
+    - [4.2 取消暂存的文件](#42-取消暂存的文件)
 
 # Git基础
 ## 1. 获取Git仓库
@@ -103,6 +105,7 @@ git mv file_from file_to
 git log
 ```
 ## 4. 撤销操作
+### 4.1 修改提交信息
 有时候我们提交完了才发现漏掉了几个文件没有添加，或者提交信息写错了。<br/>
 此时，可以运行带有 --amend 选项的提交命令来重新提交：
 ```bash
@@ -111,4 +114,8 @@ git commit --amend
 git commit -m "initial commit"
 git add forgotten_file
 git commit --amend
+```
+### 4.2 取消暂存的文件
+```bash
+git reset HEAD <file>...
 ```
