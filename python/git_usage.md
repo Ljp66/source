@@ -82,5 +82,11 @@ git commit -a -m "提交注释信息"
 ```
 ### 2.10 移除文件
 ```bash
-git rm <file>
+# 从文件夹内删除文件
+rm <file>
+git rm <files>
+# 删除之前修改过或已经放到暂存区的文件
+git rm -f <files>
+# 把文件从Git仓库中删除（即从暂存区域移除），但仍保留在当前工作目录中。
+git rm --cached <files>
 ```
