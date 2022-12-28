@@ -13,6 +13,9 @@
     - [2.8 提交更新](#28-提交更新)
     - [2.9 跳过使用暂存区域](#29-跳过使用暂存区域)
     - [2.10 移除文件](#210-移除文件)
+    - [2.11 移动文件](#211-移动文件)
+  - [3. 查看提交历史](#3-查看提交历史)
+  - [4. 撤销操作](#4-撤销操作)
 
 # Git基础
 ## 1. 获取Git仓库
@@ -89,4 +92,23 @@ git rm <files>
 git rm -f <files>
 # 把文件从Git仓库中删除（即从暂存区域移除），但仍保留在当前工作目录中。
 git rm --cached <files>
+```
+### 2.11 移动文件
+```bash
+# 重命名文件
+git mv file_from file_to
+```
+## 3. 查看提交历史
+```bash
+git log
+```
+## 4. 撤销操作
+有时候我们提交完了才发现漏掉了几个文件没有添加，或者提交信息写错了。<br/>
+此时，可以运行带有 --amend 选项的提交命令来重新提交：
+```bash
+git commit --amend
+# 使用流程
+git commit -m "initial commit"
+git add forgotten_file
+git commit --amend
 ```
