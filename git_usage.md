@@ -34,6 +34,7 @@
     - [2.1 新建分支](#21-新建分支)
     - [2.2 分支的合并](#22-分支的合并)
     - [2.3 遇到冲突时的分支合并](#23-遇到冲突时的分支合并)
+  - [3. 分支管理](#3-分支管理)
 
 # 一、Git基础
 ## 1. 获取Git仓库
@@ -208,4 +209,33 @@ git branch -d <branchname>
 ### 2.3 遇到冲突时的分支合并
 ```bash
 git mergetool
+```
+## 3. 分支管理
+```bash
+# 显示所有分支
+git branch
+git branch -v
+```
+如果要查看哪些分支已经合并到当前分支，可以运行`git branch --merged`:<br/>
+```bash
+$ git branch --merged
+  iss53
+* master
+```
+因为之前已经合并了 iss53 分支，所以现在看到它在列表中。在这个列表中分支名字前没有*号的分支通常可
+以使用`git branch -d`删除掉；你已经将它们的工作整合到了另一个分支，所以并不会失去任何东西。
+查看所有包含未合并工作的分支，可以运行 `git branch --no-merged`：
+```bash
+$ git branch --no-merged
+  testing
+```
+这里显示了其他分支。因为它包含了还未合并的工作，尝试使用`git branch -d`命令删除它时会失败：
+```bash
+$ git branch -d testing
+error: The branch 'testing' is not fully merged.
+If you are sure you want to delete it, run 'git branch -D testing'.
+```
+```bash
+# 尚未合并到 master 分支的有哪些？
+git branch --no-merged master
 ```
