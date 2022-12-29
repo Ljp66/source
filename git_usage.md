@@ -30,6 +30,10 @@
   - [1. 分支简介](#1-分支简介)
     - [1.1 分支创建](#11-分支创建)
     - [1.2 分支切换](#12-分支切换)
+  - [2. 分支的新建与合并](#2-分支的新建与合并)
+    - [2.1 新建分支](#21-新建分支)
+    - [2.2 分支的合并](#22-分支的合并)
+    - [2.3 遇到冲突时的分支合并](#23-遇到冲突时的分支合并)
 
 # 一、Git基础
 ## 1. 获取Git仓库
@@ -184,4 +188,24 @@ git branch <branchname>
 ### 1.2 分支切换
 ```bash
 git checkout <branchname>
+```
+## 2. 分支的新建与合并
+### 2.1 新建分支
+```bash
+git checkout -b <branchname>
+# git branch <branchname>
+# git checkout <branchname>
+```
+### 2.2 分支的合并
+```bash
+# 返回主分支
+git checkout main
+# 合并分支
+git merge <branchname>
+# 删除分支
+git branch -d <branchname>
+```
+### 2.3 遇到冲突时的分支合并
+```bash
+git mergetool
 ```
