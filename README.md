@@ -9,6 +9,5 @@
 ## 技能
 1. python
 2. git
-3. office
-4. markdown
-5. linux
+3. markdown
+4. linux
